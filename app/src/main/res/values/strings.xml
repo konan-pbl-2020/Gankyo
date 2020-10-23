@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+
+    <!--追加部分-->
+    <string name="twitter_consumer_key">consumer key</string>
+    <string name="twitter_consumer_secret">consumer secret</string>
+    <string name="twitter_callback_url">test://twitter</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
