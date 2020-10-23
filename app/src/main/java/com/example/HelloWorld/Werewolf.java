@@ -9,7 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -168,7 +171,7 @@ public class Werewolf extends AppCompatActivity {
 
         start.setOnClickListener(new View.OnClickListener() { //配役シャッフル＆イントロを開く
             public void onClick(View view) {
-                // Fisher–Yates shuffle
+                //役職シャッフル
                 Random rnd = new Random();
                 for (int i = peopleNum+2; i > 1; i--) {
                     int index = rnd.nextInt(i);
@@ -179,7 +182,7 @@ public class Werewolf extends AppCompatActivity {
                 }
                 System.out.println(Arrays.toString(position));
 
-
+                final int j = 0;
                 setContentView(R.layout.activity_werewolf_intro); //夜行動開始アナウンス
                 TextView textV6 = (TextView)findViewById(R.id.textView6);
                 textV6.setTextColor(Color.rgb(220, 220, 220));
@@ -190,7 +193,8 @@ public class Werewolf extends AppCompatActivity {
                 Button next = (Button)findViewById(R.id.next);
                 next.setOnClickListener(new View.OnClickListener() { //プレイヤー確認画面を開く
                     public void onClick(View view) {
-                        setScreenConfirmation();
+                        setScreenConfirmation(j);
+
                     }
                 });
             }
@@ -364,58 +368,45 @@ public class Werewolf extends AppCompatActivity {
         System.out.println(Arrays.toString(position));
     }
 
-    void setScreenConfirmation(){ //プレイヤー確認画面
+    void setScreenConfirmation(int j){ //プレイヤー確認画面
         setContentView(R.layout.activity_werewolf_confirmation);
 
         TextView text = (TextView)findViewById(R.id.text);
         text.setTextColor(Color.rgb(220, 220, 220));
-        TextView text2 = (TextView)findViewById(R.id.text2);
-        text2.setTextColor(Color.rgb(220, 220, 220));
-        TextView text3 = (TextView)findViewById(R.id.text3);
-        text3.setTextColor(Color.rgb(220, 220, 220));
-        TextView text4 = (TextView)findViewById(R.id.text4);
-        text4.setTextColor(Color.rgb(220, 220, 220));
-        TextView text5 = (TextView)findViewById(R.id.text5);
-        text5.setTextColor(Color.rgb(220, 220, 220));
+        final RadioGroup playerSelect = (RadioGroup)findViewById(R.id.pSelect);
+        playerSelect.setOnCheckedChangeListener((RadioGroup.OnCheckedChangeListener) this);
 
-        int i = 0;
-        while(i<peopleNum){
-            String player = String.valueOf(i+1);
-            TextView pnt = (TextView) findViewById(R.id.pnText);
-            pnt.setText(player);
-            pnt.setTextColor(Color.rgb(220, 220, 220));
-            TextView pnt2 = (TextView) findViewById(R.id.pnText2);
-            pnt2.setText(player);
-            pnt2.setTextColor(Color.rgb(220, 220, 220));
-
+        if(j<peopleNum){
             Button yes = (Button) findViewById(R.id.yes);
-            final int finalI = i;
+            final int finalJ = j;
             yes.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) { //役職確認画面を開く
-                    position(finalI);
+                    int checkedId = playerSelect.getCheckedRadioButtonId();
+                    if(checkedId != -1) position(checkedId);
                 }
             });
-            i++;
+            //j++;
         }
+        //if(j<peopleNum) setScreenConfirmation(j);
     }
 
-    void position(final int i){ //役職確認画面
+    void position(final int j){ //役職確認画面
         setContentView(R.layout.activity_werewolf_position);
         TextView text10 = (TextView) findViewById(R.id.textView10);
         text10.setTextColor(Color.rgb(220, 220, 220));
         TextView poN = (TextView) findViewById(R.id.positionName);
         poN.setTextColor(Color.rgb(220, 220, 220));
         final ImageView positionImage = findViewById(R.id.imageView14);
-        if(position[i] == WOLF){
+        if(position[j] == WOLF){
             poN.setText("人狼");
             positionImage.setImageResource(R.drawable.wolf);
-        }else if(position[i] == DIVINER){
+        }else if(position[j] == DIVINER){
             poN.setText("占い師");
             positionImage.setImageResource(R.drawable.diviner);
-        }else if(position[i] == THIEF){
+        }else if(position[j] == THIEF){
             poN.setText("怪盗");
             positionImage.setImageResource(R.drawable.thief);
-        }else if(position[i] == TERU){
+        }else if(position[j] == TERU){
             poN.setText("てるてる");
             positionImage.setImageResource(R.drawable.teruteru);
         }else{
@@ -426,31 +417,32 @@ public class Werewolf extends AppCompatActivity {
         Button confirm = (Button) findViewById(R.id.confirmationButton);
         confirm.setOnClickListener(new View.OnClickListener() { //役職説明画面を開く
             public void onClick(View v) {
-                if (position[i] == WOLF) wolf(i);
-                else if (position[i] == DIVINER) diviner(i);
-                else if (position[i] == THIEF) thief(i);
-                else if (position[i] == TERU) teru(i);
-                else villager(i);
+                if (position[j] == WOLF) wolf();
+                else if (position[j] == DIVINER) diviner();
+                else if (position[j] == THIEF) thief();
+                else if (position[j] == TERU) teru();
+                else villager();
             }
         });
     }
 
-    void wolf(int i){
+    void wolf(){
         setContentView(R.layout.activity_werewolf_wolf);
     }
 
-    void diviner(int i){
+    void diviner(){
         setContentView(R.layout.activity_werewolf_diviner);
     }
 
-    void thief(int i){
+    void thief(){
         setContentView(R.layout.activity_werewolf_thief);
     }
 
-    void teru(int i){
+    void teru(){
         setContentView(R.layout.activity_werewolf_teru);
     }
-    void villager(int i){
+
+    void villager(){
         setContentView(R.layout.activity_werewolf_villager);
     }
 }
