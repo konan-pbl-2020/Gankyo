@@ -19,8 +19,9 @@ import java.util.Random;
 public class Werewolf extends AppCompatActivity {
     int peopleNum = 3; //人数
     int[] position = {0, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4};
-    int wolfNum = 1, divinerNum = 1, thiefNum = 0, teruNum = 0, villagerNum; //役職の数
+    int wolfNum = 1, divinerNum = 1, thiefNum = 0, teruNum = 0, villagerNum = 3; //役職の数
     public static final int WOLF = 0, DIVINER = 1, THIEF = 2, TERU = 3, VILLAGER = 4;
+    int n = 0; //役職確認時人数カウント用変数
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,7 +181,6 @@ public class Werewolf extends AppCompatActivity {
                 }
                 System.out.println(Arrays.toString(position));
 
-                final int j = 0;
                 setContentView(R.layout.activity_werewolf_intro); //夜行動開始アナウンス
                 TextView textV6 = (TextView)findViewById(R.id.textView6);
                 textV6.setTextColor(Color.rgb(220, 220, 220));
@@ -191,8 +191,7 @@ public class Werewolf extends AppCompatActivity {
                 Button next = (Button)findViewById(R.id.next);
                 next.setOnClickListener(new View.OnClickListener() { //プレイヤー確認画面を開く
                     public void onClick(View view) {
-                        setScreenConfirmation(j);
-
+                        setScreenConfirmation();
                     }
                 });
             }
@@ -366,45 +365,54 @@ public class Werewolf extends AppCompatActivity {
         System.out.println(Arrays.toString(position));
     }
 
-    void setScreenConfirmation(int j){ //プレイヤー確認画面
+    void setScreenConfirmation(){ //プレイヤー確認画面
         setContentView(R.layout.activity_werewolf_confirmation);
 
         TextView text = (TextView)findViewById(R.id.text);
         text.setTextColor(Color.rgb(220, 220, 220));
-        final RadioGroup playerSelect = (RadioGroup)findViewById(R.id.pSelect);
-        playerSelect.setOnCheckedChangeListener((RadioGroup.OnCheckedChangeListener) this);
+        TextView text2 = (TextView)findViewById(R.id.text2);
+        text2.setTextColor(Color.rgb(220, 220, 220));
+        TextView text3 = (TextView)findViewById(R.id.text3);
+        text3.setTextColor(Color.rgb(220, 220, 220));
+        TextView text4 = (TextView)findViewById(R.id.text4);
+        text4.setTextColor(Color.rgb(220, 220, 220));
+        TextView text5 = (TextView)findViewById(R.id.text5);
+        text5.setTextColor(Color.rgb(220, 220, 220));
 
-        if(j<peopleNum){
-            Button yes = (Button) findViewById(R.id.yes);
-            final int finalJ = j;
-            yes.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) { //役職確認画面を開く
-                    int checkedId = playerSelect.getCheckedRadioButtonId();
-                    if(checkedId != -1) position(checkedId);
-                }
-            });
-            //j++;
-        }
+        String player = String.valueOf(n+1);
+        TextView pnt = (TextView) findViewById(R.id.pnText);
+        pnt.setText(player);
+        pnt.setTextColor(Color.rgb(220, 220, 220));
+        TextView pnt2 = (TextView) findViewById(R.id.pnText2);
+        pnt2.setText(player);
+        pnt2.setTextColor(Color.rgb(220, 220, 220));
+
+        Button yes = (Button) findViewById(R.id.yes);
+        yes.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) { //役職確認画面を開く
+                position();
+            }
+        });
         //if(j<peopleNum) setScreenConfirmation(j);
     }
 
-    void position(final int j){ //役職確認画面
+    void position(){ //役職確認画面
         setContentView(R.layout.activity_werewolf_position);
         TextView text10 = (TextView) findViewById(R.id.textView10);
         text10.setTextColor(Color.rgb(220, 220, 220));
         TextView poN = (TextView) findViewById(R.id.positionName);
         poN.setTextColor(Color.rgb(220, 220, 220));
         final ImageView positionImage = findViewById(R.id.imageView14);
-        if(position[j] == WOLF){
+        if(position[n] == WOLF){
             poN.setText("人狼");
             positionImage.setImageResource(R.drawable.wolf);
-        }else if(position[j] == DIVINER){
+        }else if(position[n] == DIVINER){
             poN.setText("占い師");
             positionImage.setImageResource(R.drawable.diviner);
-        }else if(position[j] == THIEF){
+        }else if(position[n] == THIEF){
             poN.setText("怪盗");
             positionImage.setImageResource(R.drawable.thief);
-        }else if(position[j] == TERU){
+        }else if(position[n] == TERU){
             poN.setText("てるてる");
             positionImage.setImageResource(R.drawable.teruteru);
         }else{
@@ -415,10 +423,10 @@ public class Werewolf extends AppCompatActivity {
         Button confirm = (Button) findViewById(R.id.confirmationButton);
         confirm.setOnClickListener(new View.OnClickListener() { //役職説明画面を開く
             public void onClick(View v) {
-                if (position[j] == WOLF) wolf();
-                else if (position[j] == DIVINER) diviner();
-                else if (position[j] == THIEF) thief();
-                else if (position[j] == TERU) teru();
+                if (position[n] == WOLF) wolf();
+                else if (position[n] == DIVINER) diviner();
+                else if (position[n] == THIEF) thief();
+                else if (position[n] == TERU) teru();
                 else villager();
             }
         });
@@ -426,21 +434,51 @@ public class Werewolf extends AppCompatActivity {
 
     void wolf(){
         setContentView(R.layout.activity_werewolf_wolf);
+        //狼の夜行動ここにプログラム
+        n++;
+        if(n<peopleNum) setScreenConfirmation();
+        else morning();
     }
 
     void diviner(){
         setContentView(R.layout.activity_werewolf_diviner);
+        //占い師の夜行動ここにプログラム
+        n++;
+        if(n<peopleNum) setScreenConfirmation();
+        else morning();
     }
 
     void thief(){
         setContentView(R.layout.activity_werewolf_thief);
+        //怪盗の夜行動ここにプログラム
+        n++;
+        if(n<peopleNum) setScreenConfirmation();
+        else morning();
     }
 
     void teru(){
         setContentView(R.layout.activity_werewolf_teru);
+        //てるてるの夜行動ここにプログラム
+        n++;
+        if(n<peopleNum) setScreenConfirmation();
+        else morning();
     }
 
     void villager(){
         setContentView(R.layout.activity_werewolf_villager);
+        //村人の夜行動ここにプログラム
+        n++;
+        if(n<peopleNum) setScreenConfirmation();
+        else morning();
+    }
+
+    void morning(){
+        setContentView(R.layout.activity_werewolf_morning);
+        Button discStart = (Button) findViewById(R.id.morningButton);
+        discStart.setOnClickListener(new View.OnClickListener() { //役職説明画面を開く
+            public void onClick(View v) {
+                //ディスカッション画面に移動
+            }
+        });
     }
 }
