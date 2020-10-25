@@ -16,8 +16,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/block1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01"
-        app:srcCompat="@drawable/blockblue" />
+        app:layout_constraintVertical_bias="0.01" />
+<!--        app:srcCompat="@drawable/blockblue" />    ファイル入れてください-->
 
     <ImageView
         android:id="@+id/block1"
@@ -28,8 +28,8 @@
         app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009"
-        app:srcCompat="@drawable/blockred" />
+        app:layout_constraintVertical_bias="0.009" />
+<!--        app:srcCompat="@drawable/blockred" />    上に同じ-->
 
     <ImageView
         android:id="@+id/bar"
