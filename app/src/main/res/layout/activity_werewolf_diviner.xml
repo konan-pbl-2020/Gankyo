@@ -6,4 +6,132 @@
     android:layout_height="match_parent"
     android:background="#333333">
 
+    <TextView
+        android:id="@+id/divText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="占い師はプレイヤーの役職か、"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/divText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="残り２枚の役職を見る。"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divText1" />
+
+    <TextView
+        android:id="@+id/divText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="どの役職を見る？"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divText2" />
+
+    <RadioGroup
+        android:id="@+id/divinerSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divText3">
+
+        <RadioButton
+            android:id="@+id/divine1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー１"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/divine2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー２"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/divine3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー３"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/divine4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー４"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/divine5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー５"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/divine6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー６"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/divine7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー７"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/divine8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー８"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/divine9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー９"
+            android:textSize="26sp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/divine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

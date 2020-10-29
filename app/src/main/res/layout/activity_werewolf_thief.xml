@@ -6,4 +6,138 @@
     android:layout_height="match_parent"
     android:background="#333333">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:isScrollContainer="false"
+        android:id="@+id/scrollView">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="怪盗は他のプレイヤーと役職を交換できる。交換は朝になった瞬間に行われるため、あなたと交換先のプレイヤーが交換後の役職の夜の能力を発揮することはない。怪盗は村人陣営だが、交換先が人狼やてるてるだった場合、その役職として勝利を目指す。交換された人狼やてるてるは村人になるが、彼らがそれを知ることはない。役職を交換するプレイヤーを選びなさい。(交換ボタンは下までスクロール)"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <RadioGroup
+        android:id="@+id/thiefSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19">
+
+        <RadioButton
+            android:id="@+id/change1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー１"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/change2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー２"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/change3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー３"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/change4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー４"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/change5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー５"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/change6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー６"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/change7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー７"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/change8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー８"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/change9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DCDCDC"
+            android:text="プレイヤー９"
+            android:textSize="26sp" />
+
+    </RadioGroup>
+
+        <Button
+            android:id="@+id/noChange"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:text="交換しない"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="交換"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

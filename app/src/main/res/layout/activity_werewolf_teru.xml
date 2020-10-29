@@ -6,4 +6,48 @@
     android:layout_height="match_parent"
     android:background="#333333">
 
+    <TextView
+        android:id="@+id/teruText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="てるてるはどの陣営にも属さず、"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/teruText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="処刑されたときに勝利する。"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teruText1" />
+
+    <TextView
+        android:id="@+id/teruText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="処刑されるよう行動しよう。"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teruText2" />
+
+    <Button
+        android:id="@+id/teruOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
