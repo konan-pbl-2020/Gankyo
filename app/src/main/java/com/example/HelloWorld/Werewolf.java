@@ -721,6 +721,48 @@ public class Werewolf extends AppCompatActivity {
                 else if(text.equals(text9)) divinePosition(finalM9);
             }
         });
+        Button left = (Button) findViewById(R.id.leftCard);
+        left.setOnClickListener(new View.OnClickListener() { //残り２枚を見る
+            public void onClick(View v) {
+                setContentView(R.layout.activity_werewolf_diviner_left);
+                TextView left1 = (TextView) findViewById(R.id.leftText); //残り２枚は…
+                left1.setTextColor(Color.rgb(220, 220, 220));
+                TextView leftC1 = (TextView) findViewById(R.id.leftPosition); //残り役職その１
+                leftC1.setTextColor(Color.rgb(220, 220, 220));
+                if(position[peopleNum] == WOLF) leftC1.setText("人狼");
+                else if(position[peopleNum] == DIVINER) leftC1.setText("占い師");
+                else if(position[peopleNum] == THIEF) leftC1.setText("怪盗");
+                else if(position[peopleNum] == TERU) leftC1.setText("てるてる");
+                else leftC1.setText("村人");
+                TextView leftC2 = (TextView) findViewById(R.id.leftPosition2); //残り役職その２
+                leftC2.setTextColor(Color.rgb(220, 220, 220));
+                if(position[peopleNum+1] == WOLF) leftC2.setText("人狼");
+                else if(position[peopleNum+1] == DIVINER) leftC2.setText("占い師");
+                else if(position[peopleNum+1] == THIEF) leftC2.setText("怪盗");
+                else if(position[peopleNum+1] == TERU) leftC2.setText("てるてる");
+                else leftC2.setText("村人");
+                ImageView leftImage1 = (ImageView) findViewById(R.id.leftCardImage); //残り役職イメージその１
+                if(position[peopleNum] == WOLF) leftImage1.setImageResource(R.drawable.wolf);
+                else if(position[peopleNum] == DIVINER) leftImage1.setImageResource(R.drawable.diviner);
+                else if(position[peopleNum] == THIEF) leftImage1.setImageResource(R.drawable.thief);
+                else if(position[peopleNum] == TERU) leftImage1.setImageResource(R.drawable.teruteru);
+                else leftImage1.setImageResource(R.drawable.villager);
+                ImageView leftImage2 = (ImageView) findViewById(R.id.leftCardImage2); //残り役職イメージその２
+                if(position[peopleNum+1] == WOLF) leftImage2.setImageResource(R.drawable.wolf);
+                else if(position[peopleNum+1] == DIVINER) leftImage2.setImageResource(R.drawable.diviner);
+                else if(position[peopleNum+1] == THIEF) leftImage2.setImageResource(R.drawable.thief);
+                else if(position[peopleNum+1] == TERU) leftImage2.setImageResource(R.drawable.teruteru);
+                else leftImage2.setImageResource(R.drawable.villager);
+                Button leftOK = (Button) findViewById(R.id.leftCardOK);
+                leftOK.setOnClickListener(new View.OnClickListener() { //OKボタン
+                    public void onClick(View v) {
+                        n++;
+                        if (n < peopleNum) setScreenConfirmation(); //次の人の処理
+                        else morning(); //夜終わり
+                    }
+                });
+            }
+        });
     }
 
     void thief(){ //怪盗の夜行動
