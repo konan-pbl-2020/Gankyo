@@ -21,7 +21,7 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="怪盗は他のプレイヤーと役職を交換できる。交換は朝になった瞬間に行われるため、あなたと交換先のプレイヤーが交換後の役職の夜の能力を発揮することはない。怪盗は村人陣営だが、交換先が人狼やてるてるだった場合、その役職として勝利を目指す。交換された人狼やてるてるは村人になるが、彼らがそれを知ることはない。役職を交換するプレイヤーを選びなさい。(交換ボタンは下までスクロール)"
+        android:text="怪盗は他のプレイヤーと役職を交換できる。交換は朝になった瞬間に行われるため、交換後の役職の能力が発揮されることはない。怪盗は村人陣営だが、交換先が人外だった場合はその陣営で勝利を目指す。交換された相手は村人陣営になるが、それを知ることはできない。役職を交換するプレイヤーを選びなさい。(交換ボタンは下までスクロール)"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +118,7 @@
             android:layout_width="144dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:text="交換しない"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -126,18 +126,18 @@
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/change"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center_horizontal"
-        android:text="交換"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:text="交換"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
 </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

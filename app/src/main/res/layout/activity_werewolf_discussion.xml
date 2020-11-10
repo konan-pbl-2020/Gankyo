@@ -19,120 +19,120 @@
         app:layout_constraintVertical_bias="0.9" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/img"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/img2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/img2"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/img3"
+        app:layout_constraintStart_toEndOf="@+id/img"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/img3"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/img4"
+        app:layout_constraintStart_toEndOf="@+id/img2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/img4"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/img3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/img5"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintEnd_toStartOf="@+id/img6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/img" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/img6"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintEnd_toStartOf="@+id/img7"
+        app:layout_constraintStart_toEndOf="@+id/img5"
+        app:layout_constraintTop_toBottomOf="@+id/img2" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/img7"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintEnd_toStartOf="@+id/img8"
+        app:layout_constraintStart_toEndOf="@+id/img6"
+        app:layout_constraintTop_toBottomOf="@+id/img3" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/img8"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintStart_toEndOf="@+id/img7"
+        app:layout_constraintTop_toBottomOf="@+id/img4" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/img9"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView10"
+        app:layout_constraintEnd_toStartOf="@+id/img10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/img5" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/img10"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView11"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintEnd_toStartOf="@+id/img11"
+        app:layout_constraintStart_toEndOf="@+id/img9"
+        app:layout_constraintTop_toBottomOf="@+id/img6" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/img11"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView12"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintEnd_toStartOf="@+id/img12"
+        app:layout_constraintStart_toEndOf="@+id/img10"
+        app:layout_constraintTop_toBottomOf="@+id/img7" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/img12"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView11"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintStart_toEndOf="@+id/img11"
+        app:layout_constraintTop_toBottomOf="@+id/img8" />
 
     <TextView
         android:id="@+id/textView17"
