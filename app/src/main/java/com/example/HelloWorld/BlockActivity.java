@@ -41,13 +41,13 @@ public class BlockActivity extends AppCompatActivity {
         ball_x += ballVx;
         ball_y += ballVy;
 
-        //ボールの画面端での判定
-        if(ball_x - Ball.getMaxWidth() == 0 || ball_x == 1) {
-            ballVx = -ballVx;
-        }
-        if(ball_y - Ball.getMaxHeight() == 0 || ball_y == 1) {
-            ballVy = -ballVy;
-        }
+//        //ボールの画面端での判定
+//        if(ball_x - Ball.getMaxWidth() == 0 || ball_x == 1) {
+//            ballVx = -ballVx;
+//        }
+//        if(ball_y - Ball.getMaxHeight() == 0 || ball_y == 1) {
+//            ballVy = -ballVy;
+//        }
 
         //ボールのブロック衝突時の判定
 //        if(){
