@@ -17,12 +17,12 @@ public class CardGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_game);
 
-//        ImageButton card1 = (ImageButton)findViewById(R.id.card1);
-//        ImageButton card2 = (ImageButton)findViewById(R.id.card2);
-//        ImageButton card3 = (ImageButton)findViewById(R.id.card3);
-//        ImageButton card4 = (ImageButton)findViewById(R.id.card4);
-//        ImageButton card5 = (ImageButton)findViewById(R.id.card5);
-//        ImageButton card6 = (ImageButton)findViewById(R.id.card6);
+        ImageButton card1 = (ImageButton)findViewById(R.id.card1);
+        ImageButton card2 = (ImageButton)findViewById(R.id.card2);
+        ImageButton card3 = (ImageButton)findViewById(R.id.card3);
+        ImageButton card4 = (ImageButton)findViewById(R.id.card4);
+        ImageButton card5 = (ImageButton)findViewById(R.id.card5);
+        ImageButton card6 = (ImageButton)findViewById(R.id.card6);
         int i, cnt =0;
 
 
