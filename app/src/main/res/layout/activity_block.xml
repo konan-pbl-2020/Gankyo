@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/block2"
-        android:layout_width="141dp"
-        android:layout_height="68dp"
+        android:layout_width="135dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,8 +21,8 @@
 
     <ImageView
         android:id="@+id/block1"
-        android:layout_width="134dp"
-        android:layout_height="69dp"
+        android:layout_width="135dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.018"

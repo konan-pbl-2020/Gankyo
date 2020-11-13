@@ -66,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button block = (Button)findViewById(R.id.block);
+        block.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,BlockActivity.class);
+                startActivity(intent);
+            }
+        });
+
         loginButton = (TwitterLoginButton) findViewById(R.id.loginButton);
         loginButton.setCallback(new Callback<TwitterSession>() {
             @Override
