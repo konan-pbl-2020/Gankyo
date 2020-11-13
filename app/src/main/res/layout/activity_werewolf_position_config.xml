@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/imageView9"
@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11"
-        app:srcCompat="@drawable/diviner" />
+        app:srcCompat="@drawable/fortuneteller" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -43,7 +43,7 @@
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wolf2" />
+        app:srcCompat="@drawable/wolf" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -64,6 +64,7 @@
         android:layout_height="85dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="110dp"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
@@ -150,6 +151,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
+        android:background="#E35C5C"
         android:text="▶"
         android:textAlignment="center"
         android:textSize="22sp"
@@ -162,6 +164,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="15dp"
+        android:background="#D2417EE8"
         android:text="◀"
         android:textAlignment="center"
         android:textSize="22sp"
@@ -179,8 +182,8 @@
         app:layout_constraintStart_toEndOf="@+id/imageView13"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <Button
-        android:id="@+id/ok"
+    <!--<Button
+        android:id="@+id/confirmationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -189,7 +192,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />-->
 
     <TextView
         android:id="@+id/divinerNum"
@@ -230,6 +233,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="15dp"
+        android:background="#D2417EE8"
         android:text="◀"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/divinerNum"
@@ -241,6 +245,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
+        android:background="#E35C5C"
         android:text="▶"
         android:textSize="22sp"
         app:layout_constraintStart_toEndOf="@+id/divinerNum"
@@ -274,6 +279,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="15dp"
+        android:background="#D2417EE8"
         android:text="◀"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/thiefNum"
@@ -285,6 +291,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
+        android:background="#E35C5C"
         android:text="▶"
         android:textSize="22sp"
         app:layout_constraintStart_toEndOf="@+id/thiefNum"
@@ -296,6 +303,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="15dp"
+        android:background="#D2417EE8"
         android:text="◀"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/teruNum"
@@ -307,8 +315,22 @@
         android:layout_height="45dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
+        android:background="#E35C5C"
         android:text="▶"
         android:textSize="22sp"
         app:layout_constraintStart_toEndOf="@+id/teruNum"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageButton
+        android:id="@+id/confirmationImageButton"
+        android:layout_width="91dp"
+        android:layout_height="103dp"
+        android:background="@drawable/hi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.796"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
