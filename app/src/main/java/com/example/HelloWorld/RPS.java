@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,8 +24,16 @@ public class RPS extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_r_p_s);
+        final ImageView image = findViewById(R.id.img);
+        image.setImageResource(R.drawable.saisyo);
+        final ImageView image2 = findViewById(R.id.img2);
+        image2.setImageResource(R.drawable.jyanken);
+        image2.setMaxWidth(280);
+        image2.setMaxHeight(260);
         final TextView text = findViewById(R.id.text);
+        text.setVisibility(INVISIBLE);
         final TextView subtext = findViewById(R.id.subtext);
+        subtext.setVisibility(INVISIBLE);
         final ImageButton rockButton = (ImageButton)findViewById(R.id.rockButton);
         final ImageButton scissorsButton = (ImageButton)findViewById(R.id.scissorsButton);
         final ImageButton paperButton = (ImageButton)findViewById(R.id.paperButton);
@@ -49,8 +58,9 @@ public class RPS extends AppCompatActivity {
                 ok.setVisibility(VISIBLE);
                 ok.setEnabled(true);
                 int opponentHand = decideOpponentHand();
-                decideGame(1, opponentHand, subtext);
+                decideGame(1, opponentHand, subtext, image2);
                 text.setText("ぽん");
+                image.setImageResource(R.drawable.jyankenbutton);
                 if(opponentHand == 1) opponentImage.setImageResource(R.drawable.bot_hand_rock);
                 else if(opponentHand == 2) opponentImage.setImageResource(R.drawable.bot_hand_scissors);
                 else opponentImage.setImageResource(R.drawable.bot_hand_paper);
@@ -66,8 +76,9 @@ public class RPS extends AppCompatActivity {
                 ok.setVisibility(VISIBLE);
                 ok.setEnabled(true);
                 int opponentHand = decideOpponentHand();
-                decideGame(2, opponentHand, subtext);
+                decideGame(2, opponentHand, subtext, image2);
                 text.setText("ぽん");
+                image.setImageResource(R.drawable.jyankenbutton);
                 if(opponentHand == 1) opponentImage.setImageResource(R.drawable.bot_hand_rock);
                 else if(opponentHand == 2) opponentImage.setImageResource(R.drawable.bot_hand_scissors);
                 else opponentImage.setImageResource(R.drawable.bot_hand_paper);
@@ -83,8 +94,9 @@ public class RPS extends AppCompatActivity {
                 ok.setVisibility(VISIBLE);
                 ok.setEnabled(true);
                 int opponentHand = decideOpponentHand();
-                decideGame(3, opponentHand, subtext);
+                decideGame(3, opponentHand, subtext, image2);
                 text.setText("ぽん");
+                image.setImageResource(R.drawable.jyankenbutton);
                 if(opponentHand == 1) opponentImage.setImageResource(R.drawable.bot_hand_rock);
                 else if(opponentHand == 2) opponentImage.setImageResource(R.drawable.bot_hand_scissors);
                 else opponentImage.setImageResource(R.drawable.bot_hand_paper);
@@ -102,7 +114,9 @@ public class RPS extends AppCompatActivity {
                 paperButton.setVisibility(VISIBLE);
                 paperButton.setEnabled(true);
                 text.setText("最初はグー");
+                image.setImageResource(R.drawable.saisyo);
                 subtext.setText("じゃんけん");
+                image2.setImageResource(R.drawable.jyanken);
                 opponentImage.setImageResource(R.drawable.bot_hand_rock);
                 subtext.setTextColor(Color.rgb(255, 0, 0));
             }
@@ -122,19 +136,22 @@ public class RPS extends AppCompatActivity {
         return hand;
     }
 
-    void decideGame(int playerHand, int opponentHand, TextView subtext) {
+    void decideGame(int playerHand, int opponentHand, TextView subtext, ImageView image2) {
         String decision;
         if(playerHand == opponentHand){
             decision = "あいこ";
             subtext.setTextColor(Color.rgb(0, 0, 0));
+            image2.setImageResource(R.drawable.aiko);
         }
         else if((playerHand == 3 && opponentHand == 1) || (playerHand+1 == opponentHand)){
             decision = "勝ち";
             subtext.setTextColor(Color.rgb(255, 0, 0));
+            image2.setImageResource(R.drawable.win);
         }
         else{
             decision = "負け";
             subtext.setTextColor(Color.rgb(0, 0, 255));
+            image2.setImageResource(R.drawable.lose);
         }
         subtext.setText(decision);
     }
