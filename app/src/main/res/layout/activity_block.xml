@@ -7,29 +7,33 @@
     android:background="@drawable/ic_launcher_background"
     tools:context="com.example.HelloWorld.BlockActivity">
 
+    <!--        app:srcCompat="@drawable/blockblue" />    ファイル入れてください-->
+
     <ImageView
         android:id="@+id/block2"
-        android:layout_width="141dp"
-        android:layout_height="68dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toEndOf="@+id/block1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
-<!--        app:srcCompat="@drawable/blockblue" />    ファイル入れてください-->
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/common_google_signin_btn_text_light" />
+
+    <!--        app:srcCompat="@drawable/blockred" />    上に同じ-->
 
     <ImageView
         android:id="@+id/block1"
-        android:layout_width="134dp"
-        android:layout_height="69dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009" />
-<!--        app:srcCompat="@drawable/blockred" />    上に同じ-->
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/common_google_signin_btn_text_light" />
 
     <ImageView
         android:id="@+id/bar"
@@ -52,5 +56,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.604"
-        app:srcCompat="@android:drawable/ic_notification_overlay" />
+        app:srcCompat="@drawable/googleg_standard_color_18" />
+
+    <ImageView
+        android:id="@+id/block3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintStart_toEndOf="@+id/block2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/common_google_signin_btn_text_light" />
 </androidx.constraintlayout.widget.ConstraintLayout>
