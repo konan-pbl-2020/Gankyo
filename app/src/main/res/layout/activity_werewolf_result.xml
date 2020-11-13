@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <Button
+        android:id="@+id/backToTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="◀ TOP"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backToConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="ゲーム設定に戻る"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/again"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="同じ設定でもう一度遊ぶ"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="勝利チーム発表"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー１："
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24" />
+
+    <TextView
+        android:id="@+id/player1PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/player1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24" />
+
+    <TextView
+        android:id="@+id/player1PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/player1PositionBefore"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24" />
+    <TextView
+        android:id="@+id/player1judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/player1PositionAfter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24" />
+
+    <TextView
+        android:id="@+id/player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー２："
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player1" />
+
+    <TextView
+        android:id="@+id/player2PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player2"
+        app:layout_constraintTop_toBottomOf="@id/player1PositionBefore" />
+
+    <TextView
+        android:id="@+id/player2PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player2PositionBefore"
+        app:layout_constraintTop_toBottomOf="@id/player1PositionAfter" />
+    <TextView
+        android:id="@+id/player2judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player2PositionAfter"
+        app:layout_constraintTop_toBottomOf="@id/player1judge" />
+
+    <TextView
+        android:id="@+id/player3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー３："
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player2" />
+
+    <TextView
+        android:id="@+id/player3PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player3"
+        app:layout_constraintTop_toBottomOf="@id/player2PositionBefore" />
+
+    <TextView
+        android:id="@+id/player3PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player3PositionBefore"
+        app:layout_constraintTop_toBottomOf="@id/player2PositionAfter" />
+    <TextView
+        android:id="@+id/player3judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player3PositionAfter"
+        app:layout_constraintTop_toBottomOf="@id/player2judge" />
+
+    <TextView
+        android:id="@+id/player4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー４："
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player3" />
+
+    <TextView
+        android:id="@+id/player4PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player4"
+        app:layout_constraintTop_toBottomOf="@id/player3PositionBefore" />
+
+    <TextView
+        android:id="@+id/player4PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player4PositionBefore"
+        app:layout_constraintTop_toBottomOf="@id/player3PositionAfter" />
+    <TextView
+        android:id="@+id/player4judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player4PositionAfter"
+        app:layout_constraintTop_toBottomOf="@id/player3judge" />
+
+    <TextView
+        android:id="@+id/player5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー５："
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player4" />
+
+    <TextView
+        android:id="@+id/player5PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player5"
+        app:layout_constraintTop_toBottomOf="@id/player4PositionBefore" />
+
+    <TextView
+        android:id="@+id/player5PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player5PositionBefore"
+        app:layout_constraintTop_toBottomOf="@id/player4PositionAfter" />
+    <TextView
+        android:id="@+id/player5judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player5PositionAfter"
+        app:layout_constraintTop_toBottomOf="@id/player4judge" />
+
+    <TextView
+        android:id="@+id/player6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー６："
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player5" />
+
+    <TextView
+        android:id="@+id/player6PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player6"
+        app:layout_constraintTop_toBottomOf="@id/player5PositionBefore" />
+
+    <TextView
+        android:id="@+id/player6PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player6PositionBefore"
+        app:layout_constraintTop_toBottomOf="@id/player5PositionAfter" />
+    <TextView
+        android:id="@+id/player6judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player6PositionAfter"
+        app:layout_constraintTop_toBottomOf="@id/player5judge" />
+
+    <TextView
+        android:id="@+id/player7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー７："
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player6" />
+
+    <TextView
+        android:id="@+id/player7PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player7"
+        app:layout_constraintTop_toBottomOf="@id/player6PositionBefore" />
+
+    <TextView
+        android:id="@+id/player7PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player7PositionBefore"
+        app:layout_constraintTop_toBottomOf="@id/player6PositionAfter" />
+    <TextView
+        android:id="@+id/player7judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player7PositionAfter"
+        app:layout_constraintTop_toBottomOf="@id/player6judge" />
+
+    <TextView
+        android:id="@+id/player8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー８："
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player7" />
+
+    <TextView
+        android:id="@+id/player8PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player8"
+        app:layout_constraintTop_toBottomOf="@id/player7PositionBefore" />
+
+    <TextView
+        android:id="@+id/player8PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player8PositionBefore"
+        app:layout_constraintTop_toBottomOf="@id/player7PositionAfter" />
+    <TextView
+        android:id="@+id/player8judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player8PositionAfter"
+        app:layout_constraintTop_toBottomOf="@id/player7judge" />
+
+    <TextView
+        android:id="@+id/player9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー９："
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player8" />
+
+    <TextView
+        android:id="@+id/player9PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player9"
+        app:layout_constraintTop_toBottomOf="@id/player8PositionBefore" />
+
+    <TextView
+        android:id="@+id/player9PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player9PositionBefore"
+        app:layout_constraintTop_toBottomOf="@id/player8PositionAfter" />
+    <TextView
+        android:id="@+id/player9judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player9PositionAfter"
+        app:layout_constraintTop_toBottomOf="@id/player8judge" />
+
+    <TextView
+        android:id="@+id/player10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="プレイヤー10："
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player9" />
+
+    <TextView
+        android:id="@+id/player10PositionBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人→"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player10"
+        app:layout_constraintTop_toBottomOf="@id/player9PositionBefore" />
+
+    <TextView
+        android:id="@+id/player10PositionAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="村人"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player10PositionBefore"
+        app:layout_constraintTop_toBottomOf="@id/player9PositionAfter" />
+    <TextView
+        android:id="@+id/player10judge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ×"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/player10PositionAfter"
+        app:layout_constraintTop_toBottomOf="@id/player9judge" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

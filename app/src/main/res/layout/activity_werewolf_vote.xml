@@ -4,126 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#333333">
+    android:background="#F5F5F5">
 
     <TextView
-        android:id="@+id/divText1"
+        android:id="@+id/voteText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="占い師はプレイヤーの役職か、"
+        android:text="プレイヤー"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
-        android:id="@+id/divText2"
+        android:id="@+id/player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="残り２枚の役職を見る。"
+        android:text="1"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/voteText1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/voteText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="投票先を選びなさい。"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divText1" />
-
-    <TextView
-        android:id="@+id/divText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="どの役職を見る？"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divText2" />
+        app:layout_constraintTop_toBottomOf="@id/voteText1" />
 
     <RadioGroup
-        android:id="@+id/divinerSelect"
+        android:id="@+id/voteSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divText3">
+        app:layout_constraintTop_toBottomOf="@+id/voteText2">
 
         <RadioButton
-            android:id="@+id/divine1"
+            android:id="@+id/heiwa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#DCDCDC"
+            android:text="平和村を祈る"
+            android:textSize="26sp" />
+
+        <RadioButton
+            android:id="@+id/vote1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="プレイヤー１"
             android:textSize="26sp" />
 
         <RadioButton
-            android:id="@+id/divine2"
+            android:id="@+id/vote2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#DCDCDC"
             android:text="プレイヤー２"
             android:textSize="26sp" />
 
         <RadioButton
-            android:id="@+id/divine3"
+            android:id="@+id/vote3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#DCDCDC"
             android:text="プレイヤー３"
             android:textSize="26sp" />
 
         <RadioButton
-            android:id="@+id/divine4"
+            android:id="@+id/vote4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#DCDCDC"
             android:text="プレイヤー４"
             android:textSize="26sp" />
 
         <RadioButton
-            android:id="@+id/divine5"
+            android:id="@+id/vote5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#DCDCDC"
             android:text="プレイヤー５"
             android:textSize="26sp" />
 
         <RadioButton
-            android:id="@+id/divine6"
+            android:id="@+id/vote6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#DCDCDC"
             android:text="プレイヤー６"
             android:textSize="26sp" />
 
         <RadioButton
-            android:id="@+id/divine7"
+            android:id="@+id/vote7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#DCDCDC"
             android:text="プレイヤー７"
             android:textSize="26sp" />
 
         <RadioButton
-            android:id="@+id/divine8"
+            android:id="@+id/vote8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#DCDCDC"
             android:text="プレイヤー８"
             android:textSize="26sp" />
 
         <RadioButton
-            android:id="@+id/divine9"
+            android:id="@+id/vote9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#DCDCDC"
             android:text="プレイヤー９"
             android:textSize="26sp" />
 
     </RadioGroup>
 
     <Button
-        android:id="@+id/divine"
+        android:id="@+id/voteOK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OK"
@@ -133,16 +133,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9" />
-
-    <Button
-        android:id="@+id/leftCard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="残り２枚のカードを見る"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/divine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
