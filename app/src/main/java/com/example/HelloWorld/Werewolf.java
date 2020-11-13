@@ -1,6 +1,7 @@
 package com.example.HelloWorld;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -44,8 +45,6 @@ public class Werewolf extends AppCompatActivity {
         setContentView(R.layout.activity_werewolf);
         //各ID取得
         final TextView number = findViewById(R.id.number);
-        Button up = (Button)findViewById(R.id.up);
-        Button down = (Button)findViewById(R.id.down);
         Button positionConfig = (Button)findViewById(R.id.position);
         Button start = (Button)findViewById(R.id.start);
         final ImageView img1 = findViewById(R.id.imageView);
@@ -137,39 +136,41 @@ public class Werewolf extends AppCompatActivity {
             }
         });
 
+        final Button up = (Button)findViewById(R.id.up);
+        final Button down = (Button)findViewById(R.id.down);
         up.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) { //プレイ人数増加
-                if(peopleNum < 10) {
-                    peopleNum++;
-                    String pn = String.valueOf(peopleNum);
-                    number.setText(pn);
-                    if(peopleNum==4){ img6.setVisibility(VISIBLE); } //画像追加表示
-                    if(peopleNum==5){ img7.setVisibility(VISIBLE); }
-                    if(peopleNum==6){ img8.setVisibility(VISIBLE); }
-                    if(peopleNum==7){ img9.setVisibility(VISIBLE); }
-                    if(peopleNum==8){ img10.setVisibility(VISIBLE); }
-                    if(peopleNum==9){ img11.setVisibility(VISIBLE); }
-                    if(peopleNum==10){ img12.setVisibility(VISIBLE); }
-                    villagerNum = (peopleNum+2)-wolfNum-divinerNum-thiefNum-teruNum;
-                }
+                peopleNum++;
+                if(peopleNum==10) up.setEnabled(false);
+                if(peopleNum==4) down.setEnabled(true);
+                String pn = String.valueOf(peopleNum);
+                number.setText(pn);
+                if(peopleNum==4){ img6.setVisibility(VISIBLE); } //画像追加表示
+                if(peopleNum==5){ img7.setVisibility(VISIBLE); }
+                if(peopleNum==6){ img8.setVisibility(VISIBLE); }
+                if(peopleNum==7){ img9.setVisibility(VISIBLE); }
+                if(peopleNum==8){ img10.setVisibility(VISIBLE); }
+                if(peopleNum==9){ img11.setVisibility(VISIBLE); }
+                if(peopleNum==10){ img12.setVisibility(VISIBLE); }
+                villagerNum = (peopleNum+2)-wolfNum-divinerNum-thiefNum-teruNum;
             }
         });
-
+        down.setEnabled(false);
         down.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) { //プレイ人数減少
-                if(peopleNum > 3) {
-                    peopleNum--;
-                    String pn = String.valueOf(peopleNum);
-                    number.setText(pn);
-                    if(peopleNum==3){ img6.setVisibility(INVISIBLE); } //画像非表示
-                    if(peopleNum==4){ img7.setVisibility(INVISIBLE); }
-                    if(peopleNum==5){ img8.setVisibility(INVISIBLE); }
-                    if(peopleNum==6){ img9.setVisibility(INVISIBLE); }
-                    if(peopleNum==7){ img10.setVisibility(INVISIBLE); }
-                    if(peopleNum==8){ img11.setVisibility(INVISIBLE); }
-                    if(peopleNum==9){ img12.setVisibility(INVISIBLE); }
-                    villagerNum = (peopleNum+2)-wolfNum-divinerNum-thiefNum-teruNum;
-                }
+                peopleNum--;
+                if(peopleNum==3) down.setEnabled(false);
+                if(peopleNum==9) up.setEnabled(true);
+                String pn = String.valueOf(peopleNum);
+                number.setText(pn);
+                if(peopleNum==3){ img6.setVisibility(INVISIBLE); } //画像非表示
+                if(peopleNum==4){ img7.setVisibility(INVISIBLE); }
+                if(peopleNum==5){ img8.setVisibility(INVISIBLE); }
+                if(peopleNum==6){ img9.setVisibility(INVISIBLE); }
+                if(peopleNum==7){ img10.setVisibility(INVISIBLE); }
+                if(peopleNum==8){ img11.setVisibility(INVISIBLE); }
+                if(peopleNum==9){ img12.setVisibility(INVISIBLE); }
+                villagerNum = (peopleNum+2)-wolfNum-divinerNum-thiefNum-teruNum;
             }
         });
 
@@ -232,100 +233,96 @@ public class Werewolf extends AppCompatActivity {
         String ten = String.valueOf(teruNum);
         teNumber.setText(ten);
 
-        Button upw = (Button)findViewById(R.id.upWolf); //狼の数増加
-        upw.setOnClickListener(new View.OnClickListener() {
+        final Button upw = (Button)findViewById(R.id.upWolf);
+        final Button downw = (Button)findViewById(R.id.downWolf);
+        final Button upd = (Button)findViewById(R.id.upDiviner);
+        final Button downd = (Button)findViewById(R.id.downDiviner);
+        final Button upth = (Button)findViewById(R.id.upThief);
+        final Button downth = (Button)findViewById(R.id.downThief);
+        final Button upte = (Button)findViewById(R.id.upTeru);
+        final Button downte = (Button)findViewById(R.id.downTeru);
+
+        downw.setEnabled(false);
+        upw.setOnClickListener(new View.OnClickListener() { //狼の数増加
             public void onClick(View view) {
-                if(wolfNum < (peopleNum+2)-divinerNum-thiefNum-teruNum-1){
-                    wolfNum++;
-                    villagerNum--;
-                }
+                wolfNum++;
+                villagerNum--;
+                buttonJudge(upw, downw, upd, downd, upth, downth, upte, downte);
                 String wn = String.valueOf(wolfNum);
                 wNumber.setText(wn);
                 changeVillagerNum(vNumber, villagerNum);
             }
         });
-        Button downw = (Button)findViewById(R.id.downWolf); //狼の数減少
-        downw.setOnClickListener(new View.OnClickListener() {
+        downw.setOnClickListener(new View.OnClickListener() {  //狼の数減少
             public void onClick(View view) {
-                if(wolfNum > 1){
-                    wolfNum--;
-                    villagerNum++;
-                }
+                wolfNum--;
+                villagerNum++;
+                buttonJudge(upw, downw, upd, downd, upth, downth, upte, downte);
                 String wn = String.valueOf(wolfNum);
                 wNumber.setText(wn);
                 changeVillagerNum(vNumber, villagerNum);
             }
         });
 
-        Button upd = (Button)findViewById(R.id.upDiviner); //占い師の数増加
-        upd.setOnClickListener(new View.OnClickListener() {
+        upd.setOnClickListener(new View.OnClickListener() { //占い師の数増加
             public void onClick(View view) {
-                if(divinerNum < (peopleNum+2)-wolfNum-thiefNum-teruNum-1){
-                    divinerNum++;
-                    villagerNum--;
-                }
+                divinerNum++;
+                villagerNum--;
+                buttonJudge(upw, downw, upd, downd, upth, downth, upte, downte);
                 String dn = String.valueOf(divinerNum);
                 dNumber.setText(dn);
                 changeVillagerNum(vNumber, villagerNum);
             }
         });
-        Button downd = (Button)findViewById(R.id.downDiviner); //占い師の数減少
-        downd.setOnClickListener(new View.OnClickListener() {
+        downd.setOnClickListener(new View.OnClickListener() { //占い師の数減少
             public void onClick(View view) {
-                if(divinerNum > 0){
-                    divinerNum--;
-                    villagerNum++;
-                }
+                divinerNum--;
+                villagerNum++;
+                buttonJudge(upw, downw, upd, downd, upth, downth, upte, downte);
                 String dn = String.valueOf(divinerNum);
                 dNumber.setText(dn);
                 changeVillagerNum(vNumber, villagerNum);
             }
         });
 
-        Button upth = (Button)findViewById(R.id.upThief); //怪盗の数増加
-        upth.setOnClickListener(new View.OnClickListener() {
+        downth.setEnabled(false);
+        upth.setOnClickListener(new View.OnClickListener() { //怪盗の数増加
             public void onClick(View view) {
-                if(thiefNum < 1){
-                    thiefNum++;
-                    villagerNum--;
-                }
+                thiefNum++;
+                villagerNum--;
+                buttonJudge(upw, downw, upd, downd, upth, downth, upte, downte);
                 String thn = String.valueOf(thiefNum);
                 thNumber.setText(thn);
                 changeVillagerNum(vNumber, villagerNum);
             }
         });
-        Button downth = (Button)findViewById(R.id.downThief); //怪盗の数減少
-        downth.setOnClickListener(new View.OnClickListener() {
+        downth.setOnClickListener(new View.OnClickListener() { //怪盗の数減少
             public void onClick(View view) {
-                if(thiefNum > 0){
-                    thiefNum--;
-                    villagerNum++;
-                }
+                thiefNum--;
+                villagerNum++;
+                buttonJudge(upw, downw, upd, downd, upth, downth, upte, downte);
                 String thn = String.valueOf(thiefNum);
                 thNumber.setText(thn);
                 changeVillagerNum(vNumber, villagerNum);
             }
         });
 
-        Button upte = (Button)findViewById(R.id.upTeru); //てるてるの数増加
-        upte.setOnClickListener(new View.OnClickListener() {
+        downte.setEnabled(false);
+        upte.setOnClickListener(new View.OnClickListener() { //てるてるの数増加
             public void onClick(View view) {
-                if(teruNum < 1){
-                    teruNum++;
-                    villagerNum--;
-                }
+                teruNum++;
+                villagerNum--;
+                buttonJudge(upw, downw, upd, downd, upth, downth, upte, downte);
                 String ten = String.valueOf(teruNum);
                 teNumber.setText(ten);
                 changeVillagerNum(vNumber, villagerNum);
             }
         });
-        Button downte = (Button)findViewById(R.id.downTeru); //てるてるの数減少
-        downte.setOnClickListener(new View.OnClickListener() {
+        downte.setOnClickListener(new View.OnClickListener() { //てるてるの数減少
             public void onClick(View view) {
-                if(teruNum > 0){
-                    teruNum--;
-                    villagerNum++;
-                }
+                teruNum--;
+                villagerNum++;
+                buttonJudge(upw, downw, upd, downd, upth, downth, upte, downte);
                 String ten = String.valueOf(teruNum);
                 teNumber.setText(ten);
                 changeVillagerNum(vNumber, villagerNum);
@@ -341,6 +338,37 @@ public class Werewolf extends AppCompatActivity {
                 number.setText(pn);
             }
         });
+    }
+
+    void buttonJudge(Button upw, Button downw, Button upd, Button downd, Button upth, Button downth, Button upte, Button downte){
+        if(wolfNum==(peopleNum+2)-divinerNum-thiefNum-teruNum-1) upw.setEnabled(false);
+        if(wolfNum==(peopleNum+2)-divinerNum-thiefNum-teruNum-1-1) upw.setEnabled(true);
+        if(wolfNum==1) downw.setEnabled(false);
+        if(wolfNum==2) downw.setEnabled(true);
+        if(divinerNum==(peopleNum+2)-wolfNum-thiefNum-teruNum-1) upd.setEnabled(false);
+        if(divinerNum==(peopleNum+2)-wolfNum-thiefNum-teruNum-1-1) upd.setEnabled(true);
+        if(divinerNum==0) downd.setEnabled(false);
+        if(divinerNum==1) downd.setEnabled(true);
+        if(thiefNum==1){
+            upth.setEnabled(false);
+            downth.setEnabled(true);
+            if(thiefNum==(peopleNum+2)-wolfNum-divinerNum-teruNum-1) upth.setEnabled(false);
+        }
+        if(thiefNum==0){
+            downth.setEnabled(false);
+            upth.setEnabled(true);
+            if(thiefNum==(peopleNum+2)-wolfNum-divinerNum-teruNum-1) upth.setEnabled(false);
+        }
+        if(teruNum==1){
+            upte.setEnabled(false);
+            downte.setEnabled(true);
+            if(teruNum==(peopleNum+2)-wolfNum-divinerNum-thiefNum-1) upte.setEnabled(false);
+        }
+        else if(teruNum==0){
+            upte.setEnabled(true);
+            downte.setEnabled(false);
+            if(teruNum==(peopleNum+2)-wolfNum-divinerNum-thiefNum-1) upte.setEnabled(false);
+        }
     }
 
     void changeVillagerNum(TextView vNumber,int villagerNum){ //変更後の村人数表示
@@ -409,7 +437,6 @@ public class Werewolf extends AppCompatActivity {
                 position();
             }
         });
-        //if(j<peopleNum) setScreenConfirmation(j);
     }
 
     void position(){ //役職確認画面
@@ -690,6 +717,13 @@ public class Werewolf extends AppCompatActivity {
             }
         }
         final Button divine = (Button) findViewById(R.id.divine);
+        divine.setEnabled(false);
+        RadioGroup radioGroup = (RadioGroup)findViewById(R.id.divinerSelect);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                divine.setEnabled(true);
+            }
+        });
         final String finalM1 = m1;
         final String finalM2 = m2;
         final String finalM3 = m3;
@@ -714,9 +748,6 @@ public class Werewolf extends AppCompatActivity {
                 String text7 = divine7.getText().toString();
                 String text8 = divine8.getText().toString();
                 String text9 = divine9.getText().toString();
-                if (checkedId == -1) {
-                    //例外処理してないので占い師で占い先選択せずにOKボタンを押さないように
-                }
                 if(text.equals(text1)) divinePosition(finalM1);
                 else if(text.equals(text2)) divinePosition(finalM2);
                 else if(text.equals(text3)) divinePosition(finalM3);
@@ -867,6 +898,13 @@ public class Werewolf extends AppCompatActivity {
             }
         }
         final Button change = (Button) findViewById(R.id.change);
+        change.setEnabled(false);
+        RadioGroup radioGroup = (RadioGroup)findViewById(R.id.thiefSelect);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                change.setEnabled(true);
+            }
+        });
         Button noChange = (Button) findViewById(R.id.noChange);
         final String finalM1 = m1;
         final String finalM2 = m2;
@@ -892,9 +930,6 @@ public class Werewolf extends AppCompatActivity {
                 String text7 = change7.getText().toString();
                 String text8 = change8.getText().toString();
                 String text9 = change9.getText().toString();
-                if (checkedId == -1) {
-                    //例外処理してないので怪盗で交換先選択せずに交換ボタンを押さないように
-                }
                 if(text.equals(text1)) changePosition(finalM1);
                 else if(text.equals(text2)) changePosition(finalM2);
                 else if(text.equals(text3)) changePosition(finalM3);
@@ -1146,9 +1181,6 @@ public class Werewolf extends AppCompatActivity {
                 Button voteSelect = (Button) findViewById(R.id.vote);
                 voteSelect.setOnClickListener(new View.OnClickListener() { //投票ボタン
                     public void onClick(View v) {
-                        setContentView(R.layout.activity_werewolf_vote);
-                        TextView voteText = (TextView) findViewById(R.id.voteText1);
-                        TextView voteText2 = (TextView) findViewById(R.id.voteText2);
                         n = 0;
                         voteSelect(); //投票先選択
                     }
@@ -1165,80 +1197,97 @@ public class Werewolf extends AppCompatActivity {
     }
 
     void voteSelect() { //投票先選択
-        TextView pNumber = (TextView) findViewById(R.id.player);
-        pNumber.setText(String.valueOf(n+1));
-        final RadioButton heiwa = (RadioButton) findViewById(R.id.heiwa);
-        final RadioButton vote1 = (RadioButton) findViewById(R.id.vote1);
-        final RadioButton vote2 = (RadioButton) findViewById(R.id.vote2);
-        final RadioButton vote3 = (RadioButton) findViewById(R.id.vote3);
-        if (peopleNum < 4) vote3.setVisibility(INVISIBLE);
-        final RadioButton vote4 = (RadioButton) findViewById(R.id.vote4);
-        if (peopleNum < 5) vote4.setVisibility(INVISIBLE);
-        final RadioButton vote5 = (RadioButton) findViewById(R.id.vote5);
-        if (peopleNum < 6) vote5.setVisibility(INVISIBLE);
-        final RadioButton vote6 = (RadioButton) findViewById(R.id.vote6);
-        if (peopleNum < 7) vote6.setVisibility(INVISIBLE);
-        final RadioButton vote7 = (RadioButton) findViewById(R.id.vote7);
-        if (peopleNum < 8) vote7.setVisibility(INVISIBLE);
-        final RadioButton vote8 = (RadioButton) findViewById(R.id.vote8);
-        if (peopleNum < 9) vote8.setVisibility(INVISIBLE);
-        final RadioButton vote9 = (RadioButton) findViewById(R.id.vote9);
-        if (peopleNum < 10) vote9.setVisibility(INVISIBLE);
-        int z = 0, y = 0, x = 0, w = 0, u = 0, t = 0, s = 0, r = 0, q = 0;
-        String m1 = "1", m2 = "1", m3 = "1", m4 = "1", m5 = "1", m6 = "1", m7 = "1", m8 = "1", m9 = "1";
-        for (z = y; z < peopleNum; z++) {
-            if (z > y && z != n) {
-                m9 = String.valueOf(z + 1);
-                vote9.setText("プレイヤー" + m9);
-                break;
-            }
-            for (y = x; y < peopleNum; y++) {
-                if (y > x && y != n) {
-                    m8 = String.valueOf(y + 1);
-                    vote8.setText("プレイヤー" + m8);
-                    break;
-                }
-                for (x = w; x < peopleNum; x++) {
-                    if (x > w && x != n) {
-                        m7 = String.valueOf(x + 1);
-                        vote7.setText("プレイヤー" + m7);
+        setContentView(R.layout.activity_werewolf_confirmation);
+
+        ConstraintLayout backGround = (ConstraintLayout)findViewById(R.id.bg);
+        backGround.setBackgroundColor(Color.rgb(247, 247, 247));
+
+        String player = String.valueOf(n+1);
+        TextView pnt = (TextView) findViewById(R.id.pnText); //プレイヤーxに端末を渡してください
+        pnt.setText(player);
+        TextView pnt2 = (TextView) findViewById(R.id.pnText2); //プレイヤーxですか？
+        pnt2.setText(player);
+
+        Button yes = (Button) findViewById(R.id.yes);
+        yes.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) { //投票画面を開く
+                setContentView(R.layout.activity_werewolf_vote);
+                TextView pNumber = (TextView) findViewById(R.id.player);
+                pNumber.setText(String.valueOf(n+1));
+                final RadioButton heiwa = (RadioButton) findViewById(R.id.heiwa);
+                final RadioButton vote1 = (RadioButton) findViewById(R.id.vote1);
+                final RadioButton vote2 = (RadioButton) findViewById(R.id.vote2);
+                final RadioButton vote3 = (RadioButton) findViewById(R.id.vote3);
+                if (peopleNum < 4) vote3.setVisibility(INVISIBLE);
+                final RadioButton vote4 = (RadioButton) findViewById(R.id.vote4);
+                if (peopleNum < 5) vote4.setVisibility(INVISIBLE);
+                final RadioButton vote5 = (RadioButton) findViewById(R.id.vote5);
+                if (peopleNum < 6) vote5.setVisibility(INVISIBLE);
+                final RadioButton vote6 = (RadioButton) findViewById(R.id.vote6);
+                if (peopleNum < 7) vote6.setVisibility(INVISIBLE);
+                final RadioButton vote7 = (RadioButton) findViewById(R.id.vote7);
+                if (peopleNum < 8) vote7.setVisibility(INVISIBLE);
+                final RadioButton vote8 = (RadioButton) findViewById(R.id.vote8);
+                if (peopleNum < 9) vote8.setVisibility(INVISIBLE);
+                final RadioButton vote9 = (RadioButton) findViewById(R.id.vote9);
+                if (peopleNum < 10) vote9.setVisibility(INVISIBLE);
+                int z = 0, y = 0, x = 0, w = 0, u = 0, t = 0, s = 0, r = 0, q = 0;
+                String m1 = "1", m2 = "1", m3 = "1", m4 = "1", m5 = "1", m6 = "1", m7 = "1", m8 = "1", m9 = "1";
+                for (z = y; z < peopleNum; z++) {
+                    if (z > y && z != n) {
+                        m9 = String.valueOf(z + 1);
+                        vote9.setText("プレイヤー" + m9);
                         break;
                     }
-                    for (w = u; w < peopleNum; w++) {
-                        if (w > u && w != n) {
-                            m6 = String.valueOf(w + 1);
-                            vote6.setText("プレイヤー" + m6);
+                    for (y = x; y < peopleNum; y++) {
+                        if (y > x && y != n) {
+                            m8 = String.valueOf(y + 1);
+                            vote8.setText("プレイヤー" + m8);
                             break;
                         }
-                        for (u = t; u < peopleNum; u++) {
-                            if (u > t && u != n) {
-                                m5 = String.valueOf(u + 1);
-                                vote5.setText("プレイヤー" + m5);
+                        for (x = w; x < peopleNum; x++) {
+                            if (x > w && x != n) {
+                                m7 = String.valueOf(x + 1);
+                                vote7.setText("プレイヤー" + m7);
                                 break;
                             }
-                            for (t = s; t < peopleNum; t++) {
-                                if (t > s && t != n) {
-                                    m4 = String.valueOf(t + 1);
-                                    vote4.setText("プレイヤー" + m4);
+                            for (w = u; w < peopleNum; w++) {
+                                if (w > u && w != n) {
+                                    m6 = String.valueOf(w + 1);
+                                    vote6.setText("プレイヤー" + m6);
                                     break;
                                 }
-                                for (s = r; s < peopleNum; s++) {
-                                    if (s > r && s != n) {
-                                        m3 = String.valueOf(s + 1);
-                                        vote3.setText("プレイヤー" + m3);
+                                for (u = t; u < peopleNum; u++) {
+                                    if (u > t && u != n) {
+                                        m5 = String.valueOf(u + 1);
+                                        vote5.setText("プレイヤー" + m5);
                                         break;
                                     }
-                                    for (r = q; r < peopleNum; r++) {
-                                        if (r > q && r != n) {
-                                            m2 = String.valueOf(r + 1);
-                                            vote2.setText("プレイヤー" + m2);
+                                    for (t = s; t < peopleNum; t++) {
+                                        if (t > s && t != n) {
+                                            m4 = String.valueOf(t + 1);
+                                            vote4.setText("プレイヤー" + m4);
                                             break;
                                         }
-                                        for (q = 0; q < peopleNum; q++) {
-                                            if (q != n) {
-                                                m1 = String.valueOf(q + 1);
-                                                vote1.setText("プレイヤー" + m1);
+                                        for (s = r; s < peopleNum; s++) {
+                                            if (s > r && s != n) {
+                                                m3 = String.valueOf(s + 1);
+                                                vote3.setText("プレイヤー" + m3);
                                                 break;
+                                            }
+                                            for (r = q; r < peopleNum; r++) {
+                                                if (r > q && r != n) {
+                                                    m2 = String.valueOf(r + 1);
+                                                    vote2.setText("プレイヤー" + m2);
+                                                    break;
+                                                }
+                                                for (q = 0; q < peopleNum; q++) {
+                                                    if (q != n) {
+                                                        m1 = String.valueOf(q + 1);
+                                                        vote1.setText("プレイヤー" + m1);
+                                                        break;
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -1247,47 +1296,51 @@ public class Werewolf extends AppCompatActivity {
                         }
                     }
                 }
-            }
-        }
-        final Button vote = (Button) findViewById(R.id.voteOK);
-        final String finalM1 = m1;
-        final String finalM2 = m2;
-        final String finalM3 = m3;
-        final String finalM4 = m4;
-        final String finalM5 = m5;
-        final String finalM6 = m6;
-        final String finalM7 = m7;
-        final String finalM8 = m8;
-        final String finalM9 = m9;
-        vote.setOnClickListener(new View.OnClickListener() { //OKボタン
-            public void onClick(View v) {
-                RadioGroup radioGroup = (RadioGroup) findViewById(R.id.voteSelect);
-                int checkedId = radioGroup.getCheckedRadioButtonId();
-                RadioButton selected = (RadioButton) findViewById(checkedId);
-                String text = selected.getText().toString();
-                String heiwaTxt = heiwa.getText().toString();
-                String text1 = vote1.getText().toString();
-                String text2 = vote2.getText().toString();
-                String text3 = vote3.getText().toString();
-                String text4 = vote4.getText().toString();
-                String text5 = vote5.getText().toString();
-                String text6 = vote6.getText().toString();
-                String text7 = vote7.getText().toString();
-                String text8 = vote8.getText().toString();
-                String text9 = vote9.getText().toString();
-                if (checkedId == -1) {
-                    //例外処理してないので投票先選択せずにOKボタンを押さないように
-                }
-                if (text.equals(text1)) vote(finalM1, radioGroup);
-                else if (text.equals(text2)) vote(finalM2, radioGroup);
-                else if (text.equals(text3)) vote(finalM3, radioGroup);
-                else if (text.equals(text4)) vote(finalM4, radioGroup);
-                else if (text.equals(text5)) vote(finalM5, radioGroup);
-                else if (text.equals(text6)) vote(finalM6, radioGroup);
-                else if (text.equals(text7)) vote(finalM7, radioGroup);
-                else if (text.equals(text8)) vote(finalM8, radioGroup);
-                else if (text.equals(text9)) vote(finalM9, radioGroup);
-                else if(text.equals(heiwaTxt)) heiwa(radioGroup);
+                final Button vote = (Button) findViewById(R.id.voteOK);
+                vote.setEnabled(false);
+                RadioGroup radioGroup = (RadioGroup)findViewById(R.id.voteSelect);
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        vote.setEnabled(true);
+                    }
+                });
+                final String finalM1 = m1;
+                final String finalM2 = m2;
+                final String finalM3 = m3;
+                final String finalM4 = m4;
+                final String finalM5 = m5;
+                final String finalM6 = m6;
+                final String finalM7 = m7;
+                final String finalM8 = m8;
+                final String finalM9 = m9;
+                vote.setOnClickListener(new View.OnClickListener() { //OKボタン
+                    public void onClick(View v) {
+                        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.voteSelect);
+                        int checkedId = radioGroup.getCheckedRadioButtonId();
+                        RadioButton selected = (RadioButton) findViewById(checkedId);
+                        String text = selected.getText().toString();
+                        String heiwaTxt = heiwa.getText().toString();
+                        String text1 = vote1.getText().toString();
+                        String text2 = vote2.getText().toString();
+                        String text3 = vote3.getText().toString();
+                        String text4 = vote4.getText().toString();
+                        String text5 = vote5.getText().toString();
+                        String text6 = vote6.getText().toString();
+                        String text7 = vote7.getText().toString();
+                        String text8 = vote8.getText().toString();
+                        String text9 = vote9.getText().toString();
+                        if (text.equals(text1)) vote(finalM1, radioGroup);
+                        else if (text.equals(text2)) vote(finalM2, radioGroup);
+                        else if (text.equals(text3)) vote(finalM3, radioGroup);
+                        else if (text.equals(text4)) vote(finalM4, radioGroup);
+                        else if (text.equals(text5)) vote(finalM5, radioGroup);
+                        else if (text.equals(text6)) vote(finalM6, radioGroup);
+                        else if (text.equals(text7)) vote(finalM7, radioGroup);
+                        else if (text.equals(text8)) vote(finalM8, radioGroup);
+                        else if (text.equals(text9)) vote(finalM9, radioGroup);
+                        else if(text.equals(heiwaTxt)) heiwa(radioGroup);
+                    }
+                });
             }
         });
     }
@@ -1312,16 +1365,20 @@ public class Werewolf extends AppCompatActivity {
         if (peopleNum < 9) sp9.setVisibility(INVISIBLE);
         final RadioButton sp10 = (RadioButton) findViewById(R.id.sp10);
         if (peopleNum < 10) sp10.setVisibility(INVISIBLE);
-        Button spOk = (Button) findViewById(R.id.spOK);
+        final Button spOk = (Button) findViewById(R.id.spOK);
+        spOk.setEnabled(false);
+        RadioGroup radioGroup = (RadioGroup)findViewById(R.id.spSelect);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                spOk.setEnabled(true);
+            }
+        });
         spOk.setOnClickListener(new View.OnClickListener() { //OKボタン
             public void onClick(View v) {
                 RadioGroup radioGroup = (RadioGroup) findViewById(R.id.spSelect);
                 int checkedId = radioGroup.getCheckedRadioButtonId();
                 RadioButton selected = (RadioButton) findViewById(checkedId);
                 String text = selected.getText().toString();
-                if (checkedId == -1) {
-                    //例外処理してないので投票先選択せずにOKボタンを押さないように
-                }
                 if (text.equals(sp1.getText().toString())) voteCount[0] = 1;
                 else if (text.equals(sp2.getText().toString())) voteCount[1] = 1;
                 else if (text.equals(sp3.getText().toString())) voteCount[2] = 1;
