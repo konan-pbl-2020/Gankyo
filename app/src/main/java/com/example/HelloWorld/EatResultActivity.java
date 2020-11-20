@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.HelloWorld.EatFruitsActivity;
@@ -37,6 +38,15 @@ public class EatResultActivity extends AppCompatActivity {
         } else {
             highScoreLabel.setText("High Score : " + highScore);
         }
+
+        Button backbotton = findViewById(R.id.button2);
+        backbotton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EatResultActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void tryAgain(View view) {
