@@ -12,12 +12,12 @@
         android:layout_width="100dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintEnd_toStartOf="@+id/card2"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"/>
-<!--        app:srcCompat="@drawable/C_card" />-->
+        app:layout_constraintVertical_bias="0.153"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
         android:id="@+id/card2"
@@ -25,11 +25,11 @@
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738"/>
-<!--        app:srcCompat="@drawable/C_card" />-->
+        app:layout_constraintVertical_bias="0.153"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
         android:id="@+id/card3"
@@ -37,24 +37,23 @@
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toEndOf="@+id/card2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738"/>
-<!--        app:srcCompat="@drawable/C_card" />-->
+        app:layout_constraintVertical_bias="0.153"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
         android:id="@+id/card4"
         android:layout_width="100dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintEnd_toStartOf="@+id/card5"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738"  />
-<!--        app:srcCompat="@drawable/C_card" -->
-
+        app:layout_constraintVertical_bias="0.366"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
         android:id="@+id/card5"
@@ -62,51 +61,39 @@
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513" />
-<!--        app:srcCompat="@drawable/C_card"-->
-
+        app:layout_constraintVertical_bias="0.366"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
         android:id="@+id/card6"
         android:layout_width="100dp"
         android:layout_height="120dp"
+        android:layout_marginEnd="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintStart_toEndOf="@+id/card5"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513" />
-<!--        app:srcCompat="@drawable/C_card"-->
+        app:layout_constraintVertical_bias="0.366"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
         android:id="@+id/card7"
         android:layout_width="100dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintEnd_toStartOf="@+id/card8"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513"/>
-<!--        app:srcCompat="@drawable/C_card" -->
+        app:layout_constraintVertical_bias="0.581"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
-        android:id="@+id/imageButton21"
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291"/>
-<!--        app:srcCompat="@drawable/C_card" />-->
-
-    <ImageButton
-        android:id="@+id/imageButton22"
+        android:id="@+id/card8"
         android:layout_width="100dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,35 +101,35 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291"/>
-<!--        app:srcCompat="@drawable/C_card" />-->
+        app:layout_constraintVertical_bias="0.581"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
-        android:id="@+id/imageButton23"
+        android:id="@+id/card9"
         android:layout_width="100dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toEndOf="@+id/card8"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291"/>
-<!--        app:srcCompat="@drawable/C_card" />-->
+        app:layout_constraintVertical_bias="0.581"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
-        android:id="@+id/imageButton24"
+        android:id="@+id/card10"
         android:layout_width="100dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintEnd_toStartOf="@+id/card11"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"/>
-<!--        app:srcCompat="@drawable/C_card" />-->
+        app:layout_constraintVertical_bias="0.795"
+        app:srcCompat="@drawable/c_card" />
 
     <ImageButton
-        android:id="@+id/imageButton25"
+        android:id="@+id/card11"
         android:layout_width="100dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -150,6 +137,117 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"/>
-<!--        app:srcCompat="@drawable/C_card" />-->
+        app:layout_constraintVertical_bias="0.795"
+        app:srcCompat="@drawable/c_card" />
+
+    <ImageButton
+        android:id="@+id/card12"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toEndOf="@+id/card11"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.795"
+        app:srcCompat="@drawable/c_card" />
+
+    <Button
+        android:id="@+id/next_card"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:text="次へ"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card11"
+        app:layout_constraintVertical_bias="0.181"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/backcolorA"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/next_card"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card10"
+        app:layout_constraintVertical_bias="0.184"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/backcolorB"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toEndOf="@+id/next_card"
+        app:layout_constraintTop_toBottomOf="@+id/card12"
+        app:layout_constraintVertical_bias="0.184"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/scoreA"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/next_card"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card10"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <TextView
+        android:id="@+id/scoreB"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toEndOf="@+id/next_card"
+        app:layout_constraintTop_toBottomOf="@+id/card12"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="142dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="16dp"
+        android:text="神経衰弱"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/card2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="戻る"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
