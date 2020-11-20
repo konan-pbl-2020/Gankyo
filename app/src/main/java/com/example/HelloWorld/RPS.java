@@ -27,7 +27,7 @@ public class RPS extends AppCompatActivity {
         final ImageView image = findViewById(R.id.img);
         image.setImageResource(R.drawable.saisyo);
         final ImageView image2 = findViewById(R.id.img2);
-        image2.setImageResource(R.drawable.jyanken);
+        image2.setImageResource(R.drawable.jyanken2);
         image2.setMaxWidth(280);
         image2.setMaxHeight(260);
         final TextView text = findViewById(R.id.text);
