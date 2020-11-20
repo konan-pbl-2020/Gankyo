@@ -66,10 +66,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button block = (Button)findViewById(R.id.block);
-        block.setOnClickListener(new View.OnClickListener() {
+        Button eat = (Button)findViewById(R.id.eat);
+        eat.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,BlockActivity.class);
+                Intent intent = new Intent(MainActivity.this,EatStartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button card = (Button)findViewById(R.id.card);
+        card.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,CardGameActivity.class);
                 startActivity(intent);
             }
         });
