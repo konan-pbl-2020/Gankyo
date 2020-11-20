@@ -6,28 +6,31 @@
     android:layout_height="match_parent"
     android:background="#333333">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:isScrollContainer="false"
-        android:id="@+id/scrollView">
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:isScrollContainer="false"-->
+<!--        android:id="@+id/scrollView">-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:orientation="vertical">
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="怪盗は他のプレイヤーと役職を交換できる。交換は朝になった瞬間に行われるため、交換後の役職の能力が発揮されることはない。怪盗は村人陣営だが、交換先が人外だった場合はその陣営で勝利を目指す。交換された相手は村人陣営になるが、それを知ることはできない。役職を交換するプレイヤーを選びなさい。(交換ボタンは下までスクロール)"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="怪盗は他のプレイヤーと役職を交換できる。交換後の役職の能力は発揮されない。怪盗は村人陣営だが、交換先が人外だった場合はその陣営で勝利を目指す。交換された相手は自覚なく村人陣営になる。交換するプレイヤーを選びなさい。"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
 
     <RadioGroup
         android:id="@+id/thiefSelect"
@@ -45,7 +48,8 @@
             android:layout_height="wrap_content"
             android:buttonTint="#DCDCDC"
             android:text="プレイヤー１"
-            android:textSize="26sp" />
+            android:textColor="#B796F3"
+            android:textSize="22sp" />
 
         <RadioButton
             android:id="@+id/change2"
@@ -53,7 +57,8 @@
             android:layout_height="wrap_content"
             android:buttonTint="#DCDCDC"
             android:text="プレイヤー２"
-            android:textSize="26sp" />
+            android:textColor="#B796F3"
+            android:textSize="22sp" />
 
         <RadioButton
             android:id="@+id/change3"
@@ -61,7 +66,8 @@
             android:layout_height="wrap_content"
             android:buttonTint="#DCDCDC"
             android:text="プレイヤー３"
-            android:textSize="26sp" />
+            android:textColor="#B796F3"
+            android:textSize="22sp" />
 
         <RadioButton
             android:id="@+id/change4"
@@ -69,7 +75,8 @@
             android:layout_height="wrap_content"
             android:buttonTint="#DCDCDC"
             android:text="プレイヤー４"
-            android:textSize="26sp" />
+            android:textColor="#B796F3"
+            android:textSize="22sp" />
 
         <RadioButton
             android:id="@+id/change5"
@@ -77,7 +84,8 @@
             android:layout_height="wrap_content"
             android:buttonTint="#DCDCDC"
             android:text="プレイヤー５"
-            android:textSize="26sp" />
+            android:textColor="#B796F3"
+            android:textSize="22sp" />
 
         <RadioButton
             android:id="@+id/change6"
@@ -85,7 +93,8 @@
             android:layout_height="wrap_content"
             android:buttonTint="#DCDCDC"
             android:text="プレイヤー６"
-            android:textSize="26sp" />
+            android:textColor="#B796F3"
+            android:textSize="22sp" />
 
         <RadioButton
             android:id="@+id/change7"
@@ -93,7 +102,8 @@
             android:layout_height="wrap_content"
             android:buttonTint="#DCDCDC"
             android:text="プレイヤー７"
-            android:textSize="26sp" />
+            android:textColor="#B796F3"
+            android:textSize="22sp" />
 
         <RadioButton
             android:id="@+id/change8"
@@ -101,7 +111,8 @@
             android:layout_height="wrap_content"
             android:buttonTint="#DCDCDC"
             android:text="プレイヤー８"
-            android:textSize="26sp" />
+            android:textColor="#B796F3"
+            android:textSize="22sp" />
 
         <RadioButton
             android:id="@+id/change9"
@@ -109,7 +120,8 @@
             android:layout_height="wrap_content"
             android:buttonTint="#DCDCDC"
             android:text="プレイヤー９"
-            android:textSize="26sp" />
+            android:textColor="#B796F3"
+            android:textSize="22sp" />
 
     </RadioGroup>
 
@@ -139,5 +151,5 @@
             app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
-</ScrollView>
+<!--</ScrollView>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
