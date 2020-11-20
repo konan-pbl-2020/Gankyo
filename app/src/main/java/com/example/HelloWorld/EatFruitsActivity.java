@@ -2,6 +2,7 @@ package com.example.HelloWorld;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -55,10 +56,11 @@ public class EatFruitsActivity extends AppCompatActivity {
     private boolean action_flg = false;
     private boolean start_flg = false;
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_eat_fruits);
 
         scoreLabel = findViewById(R.id.scoreLabel);
         startLabel = findViewById(R.id.startLabel);
@@ -176,7 +178,7 @@ public class EatFruitsActivity extends AppCompatActivity {
             }
 
             // 結果画面へ
-            Intent intent = new Intent(getApplicationContext(), EatStartActivity.class);
+            Intent intent = new Intent(getApplicationContext(), EatResultActivity.class);
             intent.putExtra("SCORE", score);
             startActivity(intent);
         }
