@@ -60,7 +60,7 @@ public class RPS extends AppCompatActivity {
                 int opponentHand = decideOpponentHand();
                 decideGame(1, opponentHand, subtext, image2);
                 text.setText("ぽん");
-                image.setImageResource(R.drawable.jyankenbutton);
+                image.setImageResource(R.drawable.pon);
                 if(opponentHand == 1) opponentImage.setImageResource(R.drawable.bot_hand_rock);
                 else if(opponentHand == 2) opponentImage.setImageResource(R.drawable.bot_hand_scissors);
                 else opponentImage.setImageResource(R.drawable.bot_hand_paper);
@@ -78,7 +78,7 @@ public class RPS extends AppCompatActivity {
                 int opponentHand = decideOpponentHand();
                 decideGame(2, opponentHand, subtext, image2);
                 text.setText("ぽん");
-                image.setImageResource(R.drawable.jyankenbutton);
+                image.setImageResource(R.drawable.pon);
                 if(opponentHand == 1) opponentImage.setImageResource(R.drawable.bot_hand_rock);
                 else if(opponentHand == 2) opponentImage.setImageResource(R.drawable.bot_hand_scissors);
                 else opponentImage.setImageResource(R.drawable.bot_hand_paper);
@@ -96,7 +96,7 @@ public class RPS extends AppCompatActivity {
                 int opponentHand = decideOpponentHand();
                 decideGame(3, opponentHand, subtext, image2);
                 text.setText("ぽん");
-                image.setImageResource(R.drawable.jyankenbutton);
+                image.setImageResource(R.drawable.pon);
                 if(opponentHand == 1) opponentImage.setImageResource(R.drawable.bot_hand_rock);
                 else if(opponentHand == 2) opponentImage.setImageResource(R.drawable.bot_hand_scissors);
                 else opponentImage.setImageResource(R.drawable.bot_hand_paper);
@@ -116,7 +116,7 @@ public class RPS extends AppCompatActivity {
                 text.setText("最初はグー");
                 image.setImageResource(R.drawable.saisyo);
                 subtext.setText("じゃんけん");
-                image2.setImageResource(R.drawable.jyanken);
+                image2.setImageResource(R.drawable.jyanken2);
                 opponentImage.setImageResource(R.drawable.bot_hand_rock);
                 subtext.setTextColor(Color.rgb(255, 0, 0));
             }
