@@ -2,6 +2,7 @@ package com.example.HelloWorld;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -789,6 +790,14 @@ public class CardGameActivity extends AppCompatActivity {
                 omote[1] = -1;
                 Button next =(Button)findViewById(R.id.next_card);
                 next.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        Button back = (Button)findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(CardGameActivity.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 
