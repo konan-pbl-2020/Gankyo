@@ -11,17 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Launcher">
+        <activity android:name=".EatResultActivity"></activity>
+        <activity android:name=".EatStartActivity" />
+        <activity android:name=".EatFruitsActivity" />
         <activity android:name=".CardGameActivity" />
         <activity android:name=".BlockActivity" />
         <activity android:name=".Werewolf" />
         <activity android:name=".RPS" />
-        <activity
-            android:name=".Sprash">
+        <activity android:name=".Sprash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
