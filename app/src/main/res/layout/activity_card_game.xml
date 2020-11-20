@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07"/>
-<!--        app:srcCompat="@drawable/c_card" />-->
+<!--        app:srcCompat="@drawable/C_card" />-->
 
     <ImageButton
         android:id="@+id/card2"
@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.738"/>
-<!--        app:srcCompat="@drawable/c_card" />-->
+<!--        app:srcCompat="@drawable/C_card" />-->
 
     <ImageButton
         android:id="@+id/card3"
@@ -41,7 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.738"/>
-<!--        app:srcCompat="@drawable/c_card" />-->
+<!--        app:srcCompat="@drawable/C_card" />-->
 
     <ImageButton
         android:id="@+id/card4"
@@ -53,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.738"  />
-<!--        app:srcCompat="@drawable/c_card" -->
+<!--        app:srcCompat="@drawable/C_card" -->
 
 
     <ImageButton
@@ -66,7 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.513" />
-<!--        app:srcCompat="@drawable/c_card"-->
+<!--        app:srcCompat="@drawable/C_card"-->
 
 
     <ImageButton
@@ -79,7 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.513" />
-<!--        app:srcCompat="@drawable/c_card"-->
+<!--        app:srcCompat="@drawable/C_card"-->
 
     <ImageButton
         android:id="@+id/card7"
@@ -91,7 +91,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.513"/>
-<!--        app:srcCompat="@drawable/c_card" -->
+<!--        app:srcCompat="@drawable/C_card" -->
 
     <ImageButton
         android:id="@+id/imageButton21"
@@ -103,7 +103,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.291"/>
-<!--        app:srcCompat="@drawable/c_card" />-->
+<!--        app:srcCompat="@drawable/C_card" />-->
 
     <ImageButton
         android:id="@+id/imageButton22"
@@ -115,7 +115,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.291"/>
-<!--        app:srcCompat="@drawable/c_card" />-->
+<!--        app:srcCompat="@drawable/C_card" />-->
 
     <ImageButton
         android:id="@+id/imageButton23"
@@ -127,7 +127,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.291"/>
-<!--        app:srcCompat="@drawable/c_card" />-->
+<!--        app:srcCompat="@drawable/C_card" />-->
 
     <ImageButton
         android:id="@+id/imageButton24"
@@ -139,7 +139,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07"/>
-<!--        app:srcCompat="@drawable/c_card" />-->
+<!--        app:srcCompat="@drawable/C_card" />-->
 
     <ImageButton
         android:id="@+id/imageButton25"
@@ -151,5 +151,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07"/>
-<!--        app:srcCompat="@drawable/c_card" />-->
+<!--        app:srcCompat="@drawable/C_card" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
