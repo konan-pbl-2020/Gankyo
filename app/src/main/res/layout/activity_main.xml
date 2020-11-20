@@ -12,12 +12,12 @@
         android:id="@+id/eat"
         android:layout_width="216dp"
         android:layout_height="60dp"
-        android:layout_marginTop="92dp"
-        android:background="#F5F5F5"
-        android:text="EAT"
-        android:textSize="26sp"
+        android:layout_marginTop="10dp"
+        android:background="#DDDDDD"
+        android:text="フルーツ食べ"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RPS" />
 
@@ -25,14 +25,14 @@
         android:id="@+id/card"
         android:layout_width="216dp"
         android:layout_height="60dp"
-        android:layout_marginTop="152dp"
-        android:background="#F5F5F5"
-        android:text="Card"
-        android:textSize="26sp"
+        android:layout_marginTop="10dp"
+        android:background="#DDDDDD"
+        android:text="神経衰弱"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RPS" />
+        app:layout_constraintTop_toBottomOf="@+id/eat" />
 
     <TextView
         android:id="@+id/text"
@@ -42,23 +42,23 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <Button
         android:id="@+id/RPS"
         android:layout_width="216dp"
         android:layout_height="60dp"
-        android:layout_marginTop="52dp"
-        android:background="#F5F5F5"
+        android:layout_marginTop="20dp"
+        android:background="#DDDDDD"
         android:text="じゃんけん"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
@@ -66,27 +66,25 @@
         android:id="@+id/werewolf"
         android:layout_width="216dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:background="#F5F5F5"
+        android:layout_marginTop="10dp"
+        android:background="#DDDDDD"
         android:text="ワンナイト人狼"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RPS" />
+        app:layout_constraintTop_toBottomOf="@+id/card" />
 
     <com.twitter.sdk.android.core.identity.TwitterLoginButton
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="10dp"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/werewolf"
-        app:layout_constraintVertical_bias="0.176" />
+        app:layout_constraintTop_toBottomOf="@+id/werewolf" />
 
     <ImageView
         android:id="@+id/imageView16"
@@ -97,7 +95,7 @@
         app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945"
+        app:layout_constraintVertical_bias="0.98"
         app:srcCompat="@drawable/tanuki" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
